@@ -35,28 +35,25 @@
             <form id="registrationForm" class="glass-form">
                 <div class="input-group">
                     <label for="name"><i class="fa-solid fa-user"></i> 姓名</label>
-                    <input type="text" id="name" name="name" placeholder="请输入你的真实姓名" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 
                 <div class="input-group">
                     <label for="student_id"><i class="fa-solid fa-id-card"></i> 学号</label>
-                    <input type="text" id="student_id" name="student_id" placeholder="请输入你的学号" required pattern="[0-9A-Za-z]+">
+                    <input type="text" id="student_id" name="student_id" required pattern="[0-9A-Za-z]+">
                 </div>
 
                 <div class="input-group">
                     <label for="college"><i class="fa-solid fa-building-columns"></i> 学院</label>
-                    <input type="text" id="college" name="college" placeholder="例：人工智能教育学部" required>
+                    <input type="text" id="college" name="college" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="contact"><i class="fa-brands fa-weixin"></i> 联系方式 (微信或手机)</label>
-                    <input type="text" id="contact" name="contact" placeholder="方便工作人员发送群邀请" required>
+                    <label for="contact"><i class="fa-solid fa-mobile-screen"></i> 手机号码</label>
+                    <input type="tel" id="contact" name="contact" required>
                 </div>
 
-                <div class="input-group">
-                    <label for="question"><i class="fa-solid fa-clipboard-question"></i> 对讲座的期待或疑问 (选填)</label>
-                    <textarea id="question" name="question" rows="3" placeholder="你有什么在科研竞赛中的困惑想问学长学姐吗？"></textarea>
-                </div>
+
 
                 <button type="submit" class="submit-btn" id="submitBtn">
                     <span>立即免费报名</span>

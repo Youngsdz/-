@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: document.getElementById('name').value,
             student_id: document.getElementById('student_id').value,
             college: document.getElementById('college').value,
-            contact: document.getElementById('contact').value,
-            question: document.getElementById('question').value
+            contact: document.getElementById('contact').value
         };
 
         try {
