@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华中师范大学创新创业志愿服务中心讲座报名</title>
+    <!-- 使用 Google Fonts 增加学术科技感 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <div class="background-anim"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="badge">华中师范大学创新创业志愿服务中心</div>
+            <h1 class="title">“跨校共研・以赛促学”<br><span class="highlight">科研竞赛经验分享讲座</span></h1>
+            
+            <div class="event-details">
+                <div class="detail-item">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>2026年4月26日 14:00</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>华中师范大学 本部8号楼</span>
+                </div>
+            </div>
+            <p class="subtitle">打破信息枷锁，聆听国赛金奖密码。名额有限，请尽快填写报名信息。</p>
+        </header>
+
+        <main class="form-wrapper">
+            <form id="registrationForm" class="glass-form">
+                <div class="input-group">
+                    <label for="name"><i class="fa-solid fa-user"></i> 姓名</label>
+                    <input type="text" id="name" name="name" placeholder="请输入你的真实姓名" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="student_id"><i class="fa-solid fa-id-card"></i> 学号</label>
+                    <input type="text" id="student_id" name="student_id" placeholder="请输入你的学号" required pattern="[0-9A-Za-z]+">
+                </div>
+
+                <div class="input-group">
+                    <label for="college"><i class="fa-solid fa-building-columns"></i> 学院</label>
+                    <input type="text" id="college" name="college" placeholder="例：人工智能教育学部" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="contact"><i class="fa-brands fa-weixin"></i> 联系方式 (微信或手机)</label>
+                    <input type="text" id="contact" name="contact" placeholder="方便工作人员发送群邀请" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="question"><i class="fa-solid fa-clipboard-question"></i> 对讲座的期待或疑问 (选填)</label>
+                    <textarea id="question" name="question" rows="3" placeholder="你有什么在科研竞赛中的困惑想问学长学姐吗？"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>立即免费报名</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+            
+            <div id="toast" class="toast hidden"></div>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2026 华中师范大学创新创业志愿服务中心</p>
+            <p class="export-hint">管理员可以直接访问 <a href="/admin/export">/admin/export</a> 导出报名表</p>
+        </footer>
+    </div>
+
+    <script src="./static/script.js"></script>
+</body>
+</html>
