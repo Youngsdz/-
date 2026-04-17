@@ -17,6 +17,56 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         if (isSubmitting) return;
+
+        // --- 开始表单校验逻辑 ---
+        const nameInput = document.getElementById('name');
+        const studentIdInput = document.getElementById('student_id');
+        const collegeInput = document.getElementById('college');
+        const contactInput = document.getElementById('contact');
+
+        // 清除旧的报错信息
+        document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border'));
+        document.querySelectorAll('.error-msg').forEach(el => el.remove());
+
+        let isValid = true;
+        let firstErrorInput = null;
+
+        const showError = (input, message) => {
+            isValid = false;
+            input.classList.add('error-border');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-msg';
+            errorDiv.textContent = message;
+            input.parentElement.appendChild(errorDiv);
+            if (!firstErrorInput) firstErrorInput = input;
+        };
+
+        // 校验姓名：至少2个字符
+        if (nameInput.value.trim().length < 2) {
+            showError(nameInput, '请输入真实的姓名');
+        }
+
+        // 校验学号：只能是数字和字母，一般长度 > 5
+        if (!/^[0-9A-Za-z]{6,20}$/.test(studentIdInput.value.trim())) {
+            showError(studentIdInput, '请输入有效的学号');
+        }
+
+        // 校验学院：至少2个字符
+        if (collegeInput.value.trim().length < 2) {
+            showError(collegeInput, '请输入真实的学院全称');
+        }
+
+        // 校验手机号码：中国大陆11位手机号正则
+        if (!/^1[3-9]\d{9}$/.test(contactInput.value.trim())) {
+            showError(contactInput, '请输入11位正确的手机号码');
+        }
+
+        if (!isValid) {
+            firstErrorInput.focus();
+            showToast('请检查标红的错误信息', 'error');
+            return;
+        }
+        // --- 校验结束 ---
         
         isSubmitting = true;
         btnText.textContent = '提交中...';
@@ -24,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.cursor = 'not-allowed';
 
         const formData = {
-            name: document.getElementById('name').value,
-            student_id: document.getElementById('student_id').value,
-            college: document.getElementById('college').value,
-            contact: document.getElementById('contact').value
+            name: nameInput.value.trim(),
+            student_id: studentIdInput.value.trim(),
+            college: collegeInput.value.trim(),
+            contact: contactInput.value.trim()
         };
 
         try {

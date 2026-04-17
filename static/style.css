@@ -258,6 +258,27 @@ body {
 .toast.success { background: #10B981; }
 .toast.error { background: #EF4444; }
 
+/* 错误校验高亮样式 */
+.input-group input.error-border {
+    border-color: #EF4444;
+    background: #FEF2F2;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.error-msg {
+    color: #EF4444;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: 600;
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
 /* 响应式调整 */
 @media (max-width: 480px) {
     .glass-form {
